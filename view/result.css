@@ -1,0 +1,388 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  user-select: none;
+  -webkit-user-select: none;
+  font-size: 0.373rem;
+  background-color: #665952;
+}
+[v-cloak] {
+  display: none;
+}
+p {
+  margin-bottom: 0;
+}
+em {
+  font-style: normal;
+}
+.btn:focus,
+.btn:active:focus {
+  outline: 0;
+}
+/* loading */
+.loading {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1050;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+.loading p {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0.907rem;
+  height: 0.907rem;
+  background: url("../resources/image/green_loading_icon@2x.png") no-repeat center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -webkit-animation: loading 3s infinite linear;
+  animation: loading 3s infinite linear;
+}
+@-webkit-keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/* /loading */
+.modalV_center > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.msgModal {
+  display: block;
+}
+.msgModal .modal-content {
+  width: 7.200rem;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 0;
+}
+.msgModal .modal-content div {
+  text-align: center;
+  padding: 1.067rem 0 1.200rem;
+  color: #665952;
+}
+.msgModal .modal-content div h4 {
+  font-size: 0.480rem;
+  font-weight: normal;
+  margin: 0;
+}
+.msgModal .modal-content ul {
+  display: table;
+  width: 100%;
+  margin-bottom: 0;
+  height: 1.333rem;
+}
+.msgModal .modal-content ul li {
+  display: table-cell;
+  text-align: center;
+  color: #665952;
+}
+.msgModal .modal-content ul li:nth-child(2) {
+  color: #D95C5C;
+}
+.fade-enter-active,
+.fade-leave-active {
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+/* 侧滑 */
+/* /侧滑 */
+.resultInfo {
+  padding-top: 0.347rem;
+}
+.resultInfo > p {
+  color: #fff;
+  font-size: 0.640rem;
+  text-align: center;
+}
+.resultInfo > p:nth-child(2) {
+  font-size: 0.480rem;
+}
+.circleProgress {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  margin: 0.133rem auto 0;
+  font-size: 5.067rem;
+  overflow: hidden;
+}
+.circleProgress:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0.9em;
+  height: 0.9em;
+  border-radius: 50%;
+  border: 0.053rem solid #423E40;
+}
+.circleProgress .slice {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  clip: rect(0, 1em, 1em, 0.5em);
+}
+.circleProgress .slice .bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0.92em;
+  height: 0.92em;
+  clip: rect(0, 0.46em, 0.92em, 0);
+  background-color: #A3D5C0;
+  border-radius: 50%;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+}
+.circleProgress .slice .fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0.92em;
+  height: 0.92em;
+  clip: rect(0, 0.92em, 0.92em, 0.46em);
+  background-color: #A3D5C0;
+  border-radius: 50%;
+  display: none;
+}
+.circleProgress.moreThan50 .slice {
+  clip: rect(auto, auto, auto, auto);
+}
+.circleProgress.moreThan50 .slice .fill {
+  display: block;
+}
+.circleProgress.moreThan_target:before {
+  width: 0.92em;
+  height: 0.92em;
+  border: 0;
+  background-color: #A3D5C0;
+}
+.circleProgress.moreThan_target .slice .bar,
+.circleProgress.moreThan_target .slice .fill {
+  background-color: #F9F79E;
+}
+.circleProgress .weightInfo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0.85em;
+  height: 0.85em;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #665952;
+  z-index: 1;
+  padding-top: 1.200rem;
+}
+.circleProgress .weightInfo p {
+  color: #B2ACA8;
+  font-size: 0.320rem;
+}
+.circleProgress .weightInfo p span {
+  margin: 0 0.107rem;
+}
+.circleProgress .weightInfo p:nth-child(1) {
+  font-size: 0.640rem;
+}
+.circleProgress .weightInfo p:nth-child(1) span {
+  color: #fff;
+  font-size: 1.333rem;
+  font-weight: 300;
+  line-height: 1;
+}
+.circleProgress .weightInfo p.myInfo_link {
+  color: #CA5757;
+  line-height: 0.533rem;
+}
+.circleProgress .halo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  background: url("../resources/image/yellow_halo_icon@2x.png") no-repeat center top;
+  -webkit-background-size: 0.613rem 0.613rem;
+  background-size: 0.613rem 0.613rem;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+  z-index: 2;
+}
+.resultList {
+  overflow: hidden;
+  padding: 0 0.533rem;
+  margin: 0.347rem 0 0 -0.267rem;
+}
+.resultList li {
+  height: 3.600rem;
+  padding: 0 0 0 0.267rem;
+  margin-bottom: 0.267rem;
+}
+.resultList li div {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: #6e645d;
+  -webkit-box-shadow: 0.107rem 0.107rem 0.107rem 0 #60534D;
+  box-shadow: 0.107rem 0.107rem 0.107rem 0 #60534D;
+  border-radius: 0.053rem;
+  overflow: hidden;
+}
+.resultList li div p {
+  color: #fff;
+  font-size: 0.320rem;
+}
+.resultList li div p:nth-child(1) {
+  height: 0.800rem;
+  line-height: 0.800rem;
+}
+.resultList li div p:nth-child(2) {
+  color: #514640;
+  margin-top: 0.533rem;
+}
+.resultList li div p:nth-child(3) {
+  font-size: 1.333rem;
+  font-weight: 300;
+  line-height: 1;
+}
+.resultList li div p.highState {
+  background-color: #CA8E57;
+}
+.resultList li div p.veryHighState {
+  background-color: #CA5757;
+}
+.resultList li div p.standardState {
+  background-color: #57CA89;
+}
+.resultList li div p.bodyAgeState {
+  background-color: #5D5049;
+}
+.resultList li div p.lowState {
+  background-color: #5AA5B2;
+}
+.greenBtn {
+  border-radius: 0.533rem;
+  padding: 0.267rem 1.067rem;
+  color: #fff;
+  font-size: 0.373rem;
+  background-color: #A3D5C0;
+}
+.greenBtn:hover,
+.greenBtn:focus {
+  color: #fff;
+}
+.greenBtn:active {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: #91cdb4;
+}
+.shareModal {
+  display: block;
+}
+.shareModal .modal-content {
+  width: 8.533rem;
+  text-align: center;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 0;
+  padding: 0.800rem 0 1.467rem;
+}
+.shareModal .modal-content ul li {
+  color: #665952;
+  font-size: 0.480rem;
+  margin-bottom: 1.467rem;
+}
+.shareModal .modal-content ul li:nth-child(1) {
+  height: 2.533rem;
+  background: no-repeat center;
+  -webkit-background-size: auto 100%;
+  background-size: auto 100%;
+  margin-bottom: 0;
+}
+.shareModal .modal-content ul li:nth-child(2) {
+  height: 1.467rem;
+  font-size: 0.960rem;
+  padding-top: 0.267rem;
+  margin: 0.267rem 0 0.800rem;
+  background: no-repeat center;
+  -webkit-background-size: auto 100%;
+  background-size: auto 100%;
+}
+.shareModal .modal-content ul.successTip li:nth-child(1) {
+  background-image: url("../resources/image/green_success_icon@2x.png");
+}
+.shareModal .modal-content ul.successTip li:nth-child(2) {
+  background-image: url("../resources/image/red_success_bg@2x.png");
+}
+.shareModal .modal-content ul.failTip li:nth-child(1) {
+  background-image: url("../resources/image/red_fail_icon@2x.png");
+}
+.shareModal .modal-content ul.failTip li:nth-child(2) {
+  background-image: url("../resources/image/brown_fail_bg@2x.png");
+}
+.resultContent {
+  min-height: 100%;
+  background-color: #665952;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+body.grayBg1 {
+  background-color: #2C2F34;
+}
+.shareGuide {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.shareGuide li {
+  color: #fff;
+  font-size: 0.480rem;
+}

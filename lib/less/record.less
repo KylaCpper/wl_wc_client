@@ -1,0 +1,170 @@
+@import "public/public.less";
+
+//选择年份
+.selectYear{
+    width: 100%;
+    height: 25px;
+    background-color: @SELECTYEAR-BG-COLOR;
+}
+
+//1月~12月 tab 横向滚动
+#tabWrapper{
+    width: 100%;
+    height: 65px;
+    overflow: hidden;
+    background-color: @TABWRAPPER-BG-COLOR;
+    #tabScroller{
+    	height: 100%;
+    	float: left;
+    }
+}
+
+.tab{
+    float: left;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-size: 0;
+    white-space: nowrap;
+    border-bottom: 0;
+    li{
+    	display: inline-block;
+    	float: none;
+    	width: 54px;
+        height: 100%;
+        a{
+            padding: 0;
+            .display-box();
+            .box-arrangement();
+            .box-horizontal-alignment();
+            color: @TAB-TEXT-COLOR;
+            font-size: @TAB-TEXT-FONTSIZE;
+            border-top-left-radius: 20px/*except*/;
+            border-top-right-radius: 20px/*except*/;
+            border: 0;
+            width: 48px;            
+            height: 100%;
+            margin: 0 auto;
+            &:hover{
+                background-color: @OPACITY;
+            }
+            span{                
+                text-align: center;
+                line-height: 1;
+                &:nth-child(2){
+                    font-size: @TAB-MONTHCHINESE-FONTSIZE;
+                }
+            }            
+            &:after{
+                content: '';
+                position: absolute;
+                bottom: 6px;
+                left: 0;
+                right: 0;                   
+                width: 4px;
+                height: 4px;
+                margin: 0 auto;
+                background-color: @TAB-NEWMSG-CIRCLE-BG;
+                border-radius: 50%;
+                display: none;
+            }
+        }
+        //tab 选中
+        &.active{
+            a,
+            a:hover{
+                color: @TAB-ACTIVE-COLOR;
+                background-color: @TAB-ACTIVE-BG;
+                border: 0;
+            }
+        }
+        //当前tab 不可选中
+        &.disabled{
+            a,
+            a:hover{
+                color: @TAB-DISABLED-COLOR;
+            }
+        }
+        //有新的测量记录
+        &.newMsg a:after{
+            display: block;
+        }
+    }
+}
+
+.monthTab_cont{
+    position: absolute;
+    top: 90px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    .tab-pane{
+        width: 100%;
+        height: 100%;
+        .scrollWrapper{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            .scroll{
+                position: absolute;
+                width: 100%;
+                min-height: 100%;
+            }
+        }
+    }
+}
+
+//侧滑
+.swipe();
+
+.recordList{
+    margin-bottom: 0;
+    .swipeCont{
+        width: 96%;
+        margin: 2% auto;
+        .swipeHandle{
+            padding: 5px 15px;
+            p{
+                color: @RECORDLIST-SWIPEHANDLE-COLOR;
+                padding: 0 15px;
+                margin-bottom: 12px;
+                span{
+                    display: block;
+                    &:nth-child(2){
+                        font-size: @RECORDLIST-SWIPEHANDLE-NUMBER-FONTSIZE;
+                        line-height: 1;
+                    }
+                }
+                &:first-child{
+                    text-align: center;
+                    position: relative;
+                    margin-bottom: 0;
+                    span{
+                        position: absolute;
+                        top: 0;      
+                        left: 0;          
+                    }
+                }
+                &:nth-child(5){
+                    text-align: center;
+                }
+            }
+        }
+        &.newMsg_contBg .swipeHandle{
+            background-color: @RECORDLIST-NEWMSGCONT-SWIPEHANDLE-BG;
+        }
+    }
+}
+
+//无测量记录 tip
+.noRecord{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    .transform(translateY(-50%));
+    color: @NORECORD-TIP-COLOR;
+    font-size: @NORECORD-TIP-FONTSIZE;
+}

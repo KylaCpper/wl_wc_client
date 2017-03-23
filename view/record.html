@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <title>测量记录</title>
+    <link rel="stylesheet" type="text/css" href="../lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./record.css">
+    <script type="text/javascript" src="../lib/js/iscroll.js"></script>  
+    <script type="text/javascript" src="../lib/js/public.js"></script>
+    <script type="text/javascript">
+        var monthScroll,janScroll,febScroll,marScroll,aprScroll,mayScroll,junScroll,julScroll,augScroll,sepScroll,octScroll,novScroll,decScroll;  
+        window.addEventListener("load",function(){
+            //1月~12月 tab 横向滚动
+            monthScroll = new IScroll('#monthWrapper',{
+                scrollX: true,
+                scrollY: false,
+                click: true
+            });
+            //1月~12月 list 垂直滚动
+            janScroll = new IScroll('#janWrapper',{
+                //list 滚动条样式 DIY
+                scrollbars: 'custom',
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,
+                click: true
+            });
+            febScroll = new IScroll('#febWrapper',{
+                scrollbars: 'custom',
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,
+                click: true
+            });   
+            marScroll = new IScroll('#marWrapper',{
+                scrollbars: 'custom',
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,
+                click: true
+            });
+            aprScroll = new IScroll('#aprWrapper',{
+                scrollbars: 'custom',
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,
+                click: true
+            });   
+            mayScroll = new IScroll('#mayWrapper',{
+                scrollbars: 'custom',
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,
+                click: true
+            });
+            junScroll = new IScroll('#junWrapper',{
+                scrollbars: 'custom',
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,
+                click: true
+            });   
+            julScroll = new IScroll('#julWrapper',{
+                scrollbars: 'custom',
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,
+                click: true
+            });
+            augScroll = new IScroll('#augWrapper',{
+                scrollbars: 'custom',
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,
+                click: true
+            });   
+            sepScroll = new IScroll('#sepWrapper',{
+                scrollbars: 'custom',
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,
+                click: true
+            });
+            octScroll = new IScroll('#octWrapper',{
+                scrollbars: 'custom',
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,
+                click: true
+            });   
+            novScroll = new IScroll('#novWrapper',{
+                scrollbars: 'custom',
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,
+                click: true
+            });
+            decScroll = new IScroll('#decWrapper',{
+                scrollbars: 'custom',
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,
+                click: true
+            });   
+        },false);
+        document.addEventListener('touchmove',function(e){e.preventDefault();}); 
+    </script>      
+</head>
+<body>
+
+    <!-- 选择年份 -->
+    <div class="selectYear">
+        
+    </div>
+    <!-- /选择年份 -->
+
+    <div id="monthWrapper">
+        <div id="monthScroller">
+            <ul class="nav nav-tabs monthTab">
+                <!-- 有新的测量记录 -->
+                <li class="newMsg">
+                    <a href="#Jan">
+                        <span>Jan</span>
+                        <span>1月</span>
+                    </a>
+                </li>
+                <!-- 默认 -->
+                <li>
+                    <a href="#Feb">
+                        <span>Feb</span>
+                        <span>2月</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#Mar">
+                        <span>Mar</span>
+                        <span>3月</span>                        
+                    </a>
+                </li>
+                <!-- tab 选中 -->
+                <li class="active newMsg">
+                    <a href="#Apr">
+                        <span>Apr</span>
+                        <span>4月</span>                        
+                    </a>
+                </li>
+                <!-- 当前tab 不可选中 -->
+                <li class="disabled">
+                    <a href="#May">
+                        <span>May</span>
+                        <span>5月</span>                        
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="#Jun">
+                        <span>Jun</span>
+                        <span>6月</span>                        
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="#Jul">
+                        <span>Jul</span>
+                        <span>7月</span>                        
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="#Aug">
+                        <span>Aug</span>
+                        <span>8月</span>                        
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="#Sep">
+                        <span>Sep</span>
+                        <span>9月</span>                        
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="#Oct">
+                        <span>Oct</span>
+                        <span>10月</span>                        
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="#Nov">
+                        <span>Nov</span>
+                        <span>11月</span>                        
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="#Dec">
+                        <span>Dec</span>
+                        <span>12月</span>                        
+                    </a>
+                </li>
+            </ul>       
+        </div>
+    </div>
+    
+    <div class="tab-content monthTab_cont">
+        <div class="tab-pane" id="Jan">
+            <div id="janWrapper" class="scrollWrapper">
+                <div id="janScroller" class="scroll">
+                    <ul class="list-unstyled swipeList recordList">
+                        <li class="swipeCont newMsg_contBg">
+                            <p class="concave left_top"></p>
+                            <p class="concave right_top"></p>
+                            <p class="concave left_bottom"></p>
+                            <p class="concave right_bottom"></p>
+                            <div class="swipeOutBtn swipeRight">
+                                <a>删除</a>
+                            </div>
+                            <div class="swipeHandle">
+                                <p class="col-xs-12">
+                                    <span>1-2</span>
+                                    08:20                                    
+                                </p>
+                                <p class="col-xs-8">
+                                    <span>体重</span>
+                                    <span>76.5</span>
+                                </p>
+                                <p class="col-xs-3 col-xs-offset-1">
+                                    <span>BMI</span>
+                                    <span>26.5</span>
+                                </p>
+                                <p class="col-xs-4">
+                                    <span>体脂</span>
+                                    <span>25%</span>
+                                </p>
+                                <p class="col-xs-4">
+                                    <span>基础代谢</span>
+                                    <span>1620</span>
+                                </p>
+                                <p class="col-xs-3 col-xs-offset-1">
+                                    <span>体年龄</span>
+                                    <span>23岁</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="swipeCont">
+                            <p class="concave left_top"></p>
+                            <p class="concave right_top"></p>
+                            <p class="concave left_bottom"></p>
+                            <p class="concave right_bottom"></p>
+                            <div class="swipeOutBtn swipeRight">
+                                <a>删除</a>
+                            </div>
+                            <div class="swipeHandle">
+                                <p class="col-xs-12">
+                                    <span>1-2</span>
+                                    09:00                                    
+                                </p>
+                                <p class="col-xs-8">
+                                    <span>体重</span>
+                                    <span>76.5</span>
+                                </p>
+                                <p class="col-xs-3 col-xs-offset-1">
+                                    <span>BMI</span>
+                                    <span>26.5</span>
+                                </p>
+                                <p class="col-xs-4">
+                                    <span>体脂</span>
+                                    <span>25%</span>
+                                </p>
+                                <p class="col-xs-4">
+                                    <span>基础代谢</span>
+                                    <span>1620</span>
+                                </p>
+                                <p class="col-xs-3 col-xs-offset-1">
+                                    <span>体年龄</span>
+                                    <span>23岁</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="swipeCont">
+                            <p class="concave left_top"></p>
+                            <p class="concave right_top"></p>
+                            <p class="concave left_bottom"></p>
+                            <p class="concave right_bottom"></p>
+                            <div class="swipeOutBtn swipeRight">
+                                <a>删除</a>
+                            </div>
+                            <div class="swipeHandle">
+                                <p class="col-xs-12">
+                                    <span>1-2</span>
+                                    09:50                                    
+                                </p>
+                                <p class="col-xs-8">
+                                    <span>体重</span>
+                                    <span>76.5</span>
+                                </p>
+                                <p class="col-xs-3 col-xs-offset-1">
+                                    <span>BMI</span>
+                                    <span>26.5</span>
+                                </p>
+                                <p class="col-xs-4">
+                                    <span>体脂</span>
+                                    <span>25%</span>
+                                </p>
+                                <p class="col-xs-4">
+                                    <span>基础代谢</span>
+                                    <span>1620</span>
+                                </p>
+                                <p class="col-xs-3 col-xs-offset-1">
+                                    <span>体年龄</span>
+                                    <span>23岁</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="swipeCont">
+                            <p class="concave left_top"></p>
+                            <p class="concave right_top"></p>
+                            <p class="concave left_bottom"></p>
+                            <p class="concave right_bottom"></p>
+                            <div class="swipeOutBtn swipeRight">
+                                <a>删除</a>
+                            </div>
+                            <div class="swipeHandle">
+                                <p class="col-xs-12">
+                                    <span>1-2</span>
+                                    10:20                                    
+                                </p>
+                                <p class="col-xs-8">
+                                    <span>体重</span>
+                                    <span>76.5</span>
+                                </p>
+                                <p class="col-xs-3 col-xs-offset-1">
+                                    <span>BMI</span>
+                                    <span>26.5</span>
+                                </p>
+                                <p class="col-xs-4">
+                                    <span>体脂</span>
+                                    <span>25%</span>
+                                </p>
+                                <p class="col-xs-4">
+                                    <span>基础代谢</span>
+                                    <span>1620</span>
+                                </p>
+                                <p class="col-xs-3 col-xs-offset-1">
+                                    <span>体年龄</span>
+                                    <span>23岁</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="swipeCont">
+                            <p class="concave left_top"></p>
+                            <p class="concave right_top"></p>
+                            <p class="concave left_bottom"></p>
+                            <p class="concave right_bottom"></p>
+                            <div class="swipeOutBtn swipeRight">
+                                <a>删除</a>
+                            </div>
+                            <div class="swipeHandle">
+                                <p class="col-xs-12">
+                                    <span>1-3</span>
+                                    13:20                                    
+                                </p>
+                                <p class="col-xs-8">
+                                    <span>体重</span>
+                                    <span>76.5</span>
+                                </p>
+                                <p class="col-xs-3 col-xs-offset-1">
+                                    <span>BMI</span>
+                                    <span>26.5</span>
+                                </p>
+                                <p class="col-xs-4">
+                                    <span>体脂</span>
+                                    <span>25%</span>
+                                </p>
+                                <p class="col-xs-4">
+                                    <span>基础代谢</span>
+                                    <span>1620</span>
+                                </p>
+                                <p class="col-xs-3 col-xs-offset-1">
+                                    <span>体年龄</span>
+                                    <span>23岁</span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="Feb">
+            <div id="febWrapper" class="scrollWrapper">
+                <div id="febScroller" class="scroll">
+                    <p class="noRecord">本月没有测量记录</p>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="Mar">
+            <div id="marWrapper" class="scrollWrapper">
+                <div id="marScroller" class="scroll">
+                    <p class="noRecord">本月没有测量记录</p>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane active" id="Apr">
+            <div id="aprWrapper" class="scrollWrapper">
+                <div id="aprScroller" class="scroll">
+                    <ul class="list-unstyled swipeList recordList">
+                        <!-- 有新的测量记录 -->
+                        <li class="swipeCont newMsg_contBg">
+                            <p class="concave left_top"></p>
+                            <p class="concave right_top"></p>
+                            <p class="concave left_bottom"></p>
+                            <p class="concave right_bottom"></p>
+                            <div class="swipeOutBtn swipeRight">
+                                <a>删除</a>
+                            </div>
+                            <div class="swipeHandle">
+                                <p class="col-xs-12">
+                                    <span>4-2</span>
+                                    08:20                                    
+                                </p>
+                                <p class="col-xs-8">
+                                    <span>体重</span>
+                                    <span>76.5</span>
+                                </p>
+                                <p class="col-xs-3 col-xs-offset-1">
+                                    <span>BMI</span>
+                                    <span>26.5</span>
+                                </p>
+                                <p class="col-xs-4">
+                                    <span>体脂</span>
+                                    <span>25%</span>
+                                </p>
+                                <p class="col-xs-4">
+                                    <span>基础代谢</span>
+                                    <span>1620</span>
+                                </p>
+                                <p class="col-xs-3 col-xs-offset-1">
+                                    <span>体年龄</span>
+                                    <span>23岁</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="swipeCont">
+                            <p class="concave left_top"></p>
+                            <p class="concave right_top"></p>
+                            <p class="concave left_bottom"></p>
+                            <p class="concave right_bottom"></p>
+                            <div class="swipeOutBtn swipeRight">
+                                <a>删除</a>
+                            </div>
+                            <div class="swipeHandle swipeRightShow">
+                                <p class="col-xs-12">
+                                    <span>4-2</span>
+                                    09:00                                    
+                                </p>
+                                <p class="col-xs-8">
+                                    <span>体重</span>
+                                    <span>76.5</span>
+                                </p>
+                                <p class="col-xs-3 col-xs-offset-1">
+                                    <span>BMI</span>
+                                    <span>26.5</span>
+                                </p>
+                                <p class="col-xs-4">
+                                    <span>体脂</span>
+                                    <span>25%</span>
+                                </p>
+                                <p class="col-xs-4">
+                                    <span>基础代谢</span>
+                                    <span>1620</span>
+                                </p>
+                                <p class="col-xs-3 col-xs-offset-1">
+                                    <span>体年龄</span>
+                                    <span>23岁</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="swipeCont">
+                            <p class="concave left_top"></p>
+                            <p class="concave right_top"></p>
+                            <p class="concave left_bottom"></p>
+                            <p class="concave right_bottom"></p>
+                            <div class="swipeOutBtn swipeRight">
+                                <a>删除</a>
+                            </div>
+                            <div class="swipeHandle">
+                                <p class="col-xs-12">
+                                    <span>4-2</span>
+                                    09:50                                    
+                                </p>
+                                <p class="col-xs-8">
+                                    <span>体重</span>
+                                    <span>76.5</span>
+                                </p>
+                                <p class="col-xs-3 col-xs-offset-1">
+                                    <span>BMI</span>
+                                    <span>26.5</span>
+                                </p>
+                                <p class="col-xs-4">
+                                    <span>体脂</span>
+                                    <span>25%</span>
+                                </p>
+                                <p class="col-xs-4">
+                                    <span>基础代谢</span>
+                                    <span>1620</span>
+                                </p>
+                                <p class="col-xs-3 col-xs-offset-1">
+                                    <span>体年龄</span>
+                                    <span>23岁</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="swipeCont">
+                            <p class="concave left_top"></p>
+                            <p class="concave right_top"></p>
+                            <p class="concave left_bottom"></p>
+                            <p class="concave right_bottom"></p>
+                            <div class="swipeOutBtn swipeRight">
+                                <a>删除</a>
+                            </div>
+                            <div class="swipeHandle">
+                                <p class="col-xs-12">
+                                    <span>4-2</span>
+                                    10:20                                    
+                                </p>
+                                <p class="col-xs-8">
+                                    <span>体重</span>
+                                    <span>76.5</span>
+                                </p>
+                                <p class="col-xs-3 col-xs-offset-1">
+                                    <span>BMI</span>
+                                    <span>26.5</span>
+                                </p>
+                                <p class="col-xs-4">
+                                    <span>体脂</span>
+                                    <span>25%</span>
+                                </p>
+                                <p class="col-xs-4">
+                                    <span>基础代谢</span>
+                                    <span>1620</span>
+                                </p>
+                                <p class="col-xs-3 col-xs-offset-1">
+                                    <span>体年龄</span>
+                                    <span>23岁</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="swipeCont">
+                            <p class="concave left_top"></p>
+                            <p class="concave right_top"></p>
+                            <p class="concave left_bottom"></p>
+                            <p class="concave right_bottom"></p>
+                            <div class="swipeOutBtn swipeRight">
+                                <a>删除</a>
+                            </div>
+                            <div class="swipeHandle">
+                                <p class="col-xs-12">
+                                    <span>4-3</span>
+                                    13:20                                    
+                                </p>
+                                <p class="col-xs-8">
+                                    <span>体重</span>
+                                    <span>76.5</span>
+                                </p>
+                                <p class="col-xs-3 col-xs-offset-1">
+                                    <span>BMI</span>
+                                    <span>26.5</span>
+                                </p>
+                                <p class="col-xs-4">
+                                    <span>体脂</span>
+                                    <span>25%</span>
+                                </p>
+                                <p class="col-xs-4">
+                                    <span>基础代谢</span>
+                                    <span>1620</span>
+                                </p>
+                                <p class="col-xs-3 col-xs-offset-1">
+                                    <span>体年龄</span>
+                                    <span>23岁</span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="May">
+            <div id="mayWrapper" class="scrollWrapper">
+                <div id="mayScroller" class="scroll">
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="Jun">
+            <div id="junWrapper" class="scrollWrapper">
+                <div id="junScroller" class="scroll">
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="Jul">
+            <div id="julWrapper" class="scrollWrapper">
+                <div id="julScroller" class="scroll">
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="Aug">
+            <div id="augWrapper" class="scrollWrapper">
+                <div id="augScroller" class="scroll">
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="Sep">
+            <div id="sepWrapper" class="scrollWrapper">
+                <div id="sepScroller" class="scroll">
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="Oct">
+            <div id="octWrapper" class="scrollWrapper">
+                <div id="octScroller" class="scroll">
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="Nov">
+            <div id="novWrapper" class="scrollWrapper">
+                <div id="novScroller" class="scroll">
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="Dec">
+            <div id="decWrapper" class="scrollWrapper">
+                <div id="decScroller" class="scroll">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 提示弹窗: 点击list 侧滑解绑后显示 通过display:none/block 隐藏/显示 -->
+    <transition name="fade">
+        <div class="modal modalV_center msgModal" style="display:none;">
+            <div class="modal-content">
+                <div>
+                    <h4>是否确认删除</h4>
+                </div>
+                <ul class="list-unstyled">
+                    <li>取消</li>
+                    <li>删除</li>
+                </ul>                       
+            </div>
+        </div>
+    </transition>
+    <!-- /提示弹窗 -->
+
+</body>
+</html>

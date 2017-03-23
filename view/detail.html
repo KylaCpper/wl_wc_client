@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <title>测量详情</title>
+    <link rel="stylesheet" type="text/css" href="../lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./detail.css">
+    <script type="text/javascript" src="../lib/js/public.js"></script>
+</head>
+<body>
+
+	<div class="detailTab">
+		<ul class="nav nav-tabs">
+			<li>
+				<a href="#weight">体重</a>
+			</li>
+		  	<li>
+		  		<a href="#bmi">BMI</a>
+		  	</li>
+		  	<li class="active">
+		  		<a href="#bodyFat">体脂</a>
+		  	</li>
+		  	<li>
+		  		<a href="#bmr">代谢</a>
+		  	</li>
+		  	<li>
+		  		<a href="#bodyAge">体龄</a>
+		  	</li>
+		</ul>
+	</div>	
+
+	<div class="tab-content detailTab_cont">
+		<div class="tab-pane" id="weight">
+	  		<!-- 周、月、季 tab 区域 -->
+			<div class="dateTabArea">			
+				<ul class="nav nav-pills dateTab">
+				  	<li class="active">
+				  		<a href="#Wweek">周</a>
+				  	</li>
+				  	<li>
+				  		<a href="#Wmonth">月</a>
+				  	</li>
+				  	<li>
+				  		<a href="#Wseason">季</a>
+				  	</li>
+				</ul>
+				<div class="tab-content dateTab_cont">
+					<div class="tab-pane active" id="Wweek">周</div>
+				  	<div class="tab-pane" id="Wmonth">月</div>
+				  	<div class="tab-pane" id="Wseason">季</div>
+				</div>				
+			</div>
+			<!-- /周、月、季 tab 区域 -->
+			<div class="numValueGroup">
+				<ul class="list-unstyled">
+					<li class="col-xs-4">
+						<div>
+							<p>周平均</p>
+							<p>78.3kg</p>
+						</div>
+					</li>
+					<li class="col-xs-4">
+						<div>
+							<p>周最大</p>
+							<p>80.2kg</p>
+						</div>
+					</li>
+					<li class="col-xs-4">
+						<div>
+							<p>周最小</p>
+							<p>74.9kg</p>
+						</div>
+					</li>
+				</ul>
+				<p>
+					<span class="pull-left">理想体重</span>
+					<span class="pull-right">55.0~72.0kg</span>
+				</p>
+			</div>
+			<ul class="list-unstyled stateGroup">
+				<li class="lowState">
+					<p></p>
+					<p>偏低</p>
+				</li>
+				<li class="standardState">
+					<p></p>
+					<p>标准</p>
+				</li>
+				<li class="highState">
+					<p></p>
+					<p>偏重</p>
+				</li>
+				<li class="veryHighState">
+					<p></p>
+					<p>超重</p>
+				</li>
+				<li class="halo" style="left: 50%;"></li>
+			</ul>	
+		</div>
+	  	<div class="tab-pane" id="bmi">
+	  		<!-- 周、月、季 tab 区域 -->
+			<div class="dateTabArea">			
+				<ul class="nav nav-pills dateTab">
+				  	<li class="active">
+				  		<a href="#BMIweek">周</a>
+				  	</li>
+				  	<li>
+				  		<a href="#BMImonth">月</a>
+				  	</li>
+				  	<li>
+				  		<a href="#BMIseason">季</a>
+				  	</li>
+				</ul>
+				<div class="tab-content dateTab_cont">
+					<div class="tab-pane active" id="BMIweek">周</div>
+				  	<div class="tab-pane" id="BMImonth">月</div>
+				  	<div class="tab-pane" id="BMIseason">季</div>
+				</div>				
+			</div>
+			<!-- /周、月、季 tab 区域 -->
+			<div class="numValueGroup">
+				<ul class="list-unstyled">
+					<li class="col-xs-4">
+						<div>
+							<p>周平均</p>
+							<p>26.4</p>
+						</div>
+					</li>
+					<li class="col-xs-4">
+						<div>
+							<p>周最大</p>
+							<p>27.1</p>
+						</div>
+					</li>
+					<li class="col-xs-4">
+						<div>
+							<p>周最小</p>
+							<p>25.6</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<p class="explain">BMI（Body Mass Index）是国际上用语衡量人体胖瘦程度的标准。</p>	
+	  	</div>
+	  	<div class="tab-pane active" id="bodyFat">
+	  		<!-- 周、月、季 tab 区域 -->
+			<div class="dateTabArea">			
+				<ul class="nav nav-pills dateTab">
+				  	<li class="active">
+				  		<a href="#BFweek">周</a>
+				  	</li>
+				  	<li>
+				  		<a href="#BFmonth">月</a>
+				  	</li>
+				  	<li>
+				  		<a href="#BFseason">季</a>
+				  	</li>
+				</ul>
+				<div class="tab-content dateTab_cont">
+					<div class="tab-pane active" id="BFweek">周</div>
+				  	<div class="tab-pane" id="BFmonth">月</div>
+				  	<div class="tab-pane" id="BFseason">季</div>
+				</div>				
+			</div>
+			<!-- /周、月、季 tab 区域 -->
+			<div class="numValueGroup">
+				<ul class="list-unstyled">
+					<li class="col-xs-4">
+						<div>
+							<p>周平均</p>
+							<p>23.5%</p>
+						</div>
+					</li>
+					<li class="col-xs-4">
+						<div>
+							<p>周最大</p>
+							<p>25.1%</p>
+						</div>
+					</li>
+					<li class="col-xs-4">
+						<div>
+							<p>周最小</p>
+							<p>21.9%</p>
+						</div>
+					</li>
+				</ul>
+				<p>
+					<span class="pull-left">理想体脂</span>
+					<span class="pull-right">11%~21%</span>
+				</p>
+			</div>
+			<ul class="list-unstyled stateGroup">
+				<li>
+					<p></p>
+					<p>偏瘦</p>
+				</li>
+				<li>
+					<p></p>
+					<p>标准</p>
+				</li>
+				<li>
+					<p></p>
+					<p>偏胖</p>
+				</li>
+				<li> 
+					<p></p>
+					<p>肥胖</p>
+				</li>
+				<li class="halo" style="left: 50%;"></li>
+			</ul>
+			<p class="explain">体脂率是指人体内脂肪重量在人体总体重中所占的比例，又称体脂百分数，它反映人体内脂肪含量的多少。</p>
+	  	</div>
+	  	<div class="tab-pane" id="bmr">
+	  		<!-- 周、月、季 tab 区域 -->
+			<div class="dateTabArea">			
+				<ul class="nav nav-pills dateTab">
+				  	<li class="active">
+				  		<a href="#BMRweek">周</a>
+				  	</li>
+				  	<li>
+				  		<a href="#BMRmonth">月</a>
+				  	</li>
+				  	<li>
+				  		<a href="#BMRseason">季</a>
+				  	</li>
+				</ul>
+				<div class="tab-content dateTab_cont">
+					<div class="tab-pane active" id="BMRweek">周</div>
+				  	<div class="tab-pane" id="BMRmonth">月</div>
+				  	<div class="tab-pane" id="BMRseason">季</div>
+				</div>				
+			</div>
+			<!-- /周、月、季 tab 区域 -->
+			<div class="numValueGroup">
+				<ul class="list-unstyled">
+					<li class="col-xs-4">
+						<div>
+							<p>周平均</p>
+							<p>1438</p>
+						</div>
+					</li>
+					<li class="col-xs-4">
+						<div>
+							<p>周最大</p>
+							<p>1512</p>
+						</div>
+					</li>
+					<li class="col-xs-4">
+						<div>
+							<p>周最小</p>
+							<p>1334</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<p class="explain">基础代谢率指人体在清醒又极端安静的状态下，不受肌肉活动、环境温度、食物及精神紧张等影响时的能量代谢率。</p> 
+	  	</div>
+	  	<div class="tab-pane" id="bodyAge">
+	  		<!-- 周、月、季 tab 区域 -->
+			<div class="dateTabArea">			
+				<ul class="nav nav-pills dateTab">
+				  	<li class="active">
+				  		<a href="#BAweek">周</a>
+				  	</li>
+				  	<li>
+				  		<a href="#BAmonth">月</a>
+				  	</li>
+				  	<li>
+				  		<a href="#BAseason">季</a>
+				  	</li>
+				</ul>
+				<div class="tab-content dateTab_cont">
+					<div class="tab-pane active" id="BAweek">周</div>
+				  	<div class="tab-pane" id="BAmonth">月</div>
+				  	<div class="tab-pane" id="BAseason">季</div>
+				</div>				
+			</div>
+			<!-- /周、月、季 tab 区域 -->
+			<div class="numValueGroup">
+				<ul class="list-unstyled">
+					<li class="col-xs-4">
+						<div>
+							<p>周平均</p>
+							<p>26</p>
+						</div>
+					</li>
+					<li class="col-xs-4">
+						<div>
+							<p>周最大</p>
+							<p>27</p>
+						</div>
+					</li>
+					<li class="col-xs-4">
+						<div>
+							<p>周最小</p>
+							<p>25</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<p class="explain">体龄指身体的年龄，身体年龄直接关系到身体的循环状况、血液流通情况以及营养吸收的程度。</p>
+	  	</div>
+	</div>		
+
+</body>
+</html>

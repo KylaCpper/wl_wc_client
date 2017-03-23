@@ -1,0 +1,92 @@
+@import "public/variables.less";
+@import "public/mixins.less";
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    user-select: none;
+    -webkit-user-select: none;
+    font-size: @BODY-TEXT-FONTSIZE;
+    background-color: @BODY-BG-COLOR;    
+}
+
+p{    
+    margin-bottom: 0;
+}
+
+// .iconfont{
+//     font-family: "iconfont" !important;
+//     font-size: 16px;
+//     font-style: normal;
+//     -webkit-font-smoothing: antialiased;
+//     -webkit-text-stroke-width: 0.2px/*except*/;
+//     // -moz-osx-font-smoothing: grayscale;
+// }
+
+
+
+//背景图片样式
+.bgImgSize(@width,@height,@bgImg,@bgPosition,@bgSize,@bool:false){
+    width: @width;
+    height: @height;
+    &when not(@bool){
+        background: url("@{IMAGE_PATH}/@{bgImg}") no-repeat @bgPosition;    
+    }
+    &when(@bool){
+        background: data-uri("@{IMAGE_PATH}/@{bgImg}") no-repeat @bgPosition;    
+    }    
+    .background-size(@bgSize);  
+}
+
+.bgImg(@bgImg,@bool:false){
+    &when not(@bool){
+        background-image: url("@{IMAGE_PATH}/@{bgImg}");    
+    }
+    &when(@bool){
+        background-image: data-uri("@{IMAGE_PATH}/@{bgImg}");    
+    }  
+}
+
+//tap row style
+.tap_row(@tap-row-active-bg){
+    &:active{
+        background-color: @tap-row-active-bg;
+    }
+}
+
+//tap icon/text style
+.tap_font(@tap-font-active-color){
+    &:active{
+        color: @tap-font-active-color;
+    }
+}
+
+//iscroll滚动区域
+.iscroll_wrapper(@top,@bottom){
+    position: absolute;
+    z-index: 1;
+    top: @top;
+    bottom: @bottom;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+//单行省略
+.text_oneRow_ellipsis(){
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+//多行省略
+.text_moreRow_ellipsis(@rowNumber){
+    overflow: hidden;
+    text-overflow: ellipsis;
+    .old-display-box(); 
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: @rowNumber;
+}

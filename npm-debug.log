@@ -1,0 +1,100 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Users\\UGEN174\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'vue-touch' ]
+2 info using npm@3.10.7
+3 info using node@v6.4.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData vue-touch
+8 silly fetchNamedPackageData vue-touch
+9 silly mapToRegistry name vue-touch
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry http://192.168.2.91:4873/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'vue-touch',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   escapedName: 'vue-touch',
+12 silly mapToRegistry   name: 'vue-touch',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri http://192.168.2.91:4873/vue-touch
+14 verbose request uri http://192.168.2.91:4873/vue-touch
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 16:27:13
+17 verbose request using bearer token for auth
+18 verbose request id 07768cf37045aaf1
+19 http request GET http://192.168.2.91:4873/vue-touch
+20 http 404 http://192.168.2.91:4873/vue-touch
+21 verbose headers { 'x-powered-by': 'Sinopia/1.4.0',
+21 verbose headers   'content-type': 'application/json; charset=utf-8',
+21 verbose headers   'content-length': '43',
+21 verbose headers   etag: 'W/"2b-d418f262"',
+21 verbose headers   vary: 'Accept-Encoding',
+21 verbose headers   'x-status-cat': 'http://flic.kr/p/aV6juR',
+21 verbose headers   date: 'Mon, 12 Dec 2016 08:08:28 GMT',
+21 verbose headers   connection: 'keep-alive' }
+22 silly get cb [ 404,
+22 silly get   { 'x-powered-by': 'Sinopia/1.4.0',
+22 silly get     'content-type': 'application/json; charset=utf-8',
+22 silly get     'content-length': '43',
+22 silly get     etag: 'W/"2b-d418f262"',
+22 silly get     vary: 'Accept-Encoding',
+22 silly get     'x-status-cat': 'http://flic.kr/p/aV6juR',
+22 silly get     date: 'Mon, 12 Dec 2016 08:08:28 GMT',
+22 silly get     connection: 'keep-alive' } ]
+23 silly fetchPackageMetaData Error: no such package available : vue-touch
+23 silly fetchPackageMetaData     at makeError (C:\Users\UGEN174\AppData\Roaming\npm\node_modules\npm\node_modules\npm-registry-client\lib\request.js:264:12)
+23 silly fetchPackageMetaData     at CachingRegistryClient.<anonymous> (C:\Users\UGEN174\AppData\Roaming\npm\node_modules\npm\node_modules\npm-registry-client\lib\request.js:252:14)
+23 silly fetchPackageMetaData     at Request._callback (C:\Users\UGEN174\AppData\Roaming\npm\node_modules\npm\node_modules\npm-registry-client\lib\request.js:172:14)
+23 silly fetchPackageMetaData     at Request.self.callback (C:\Users\UGEN174\AppData\Roaming\npm\node_modules\npm\node_modules\request\request.js:187:22)
+23 silly fetchPackageMetaData     at emitTwo (events.js:106:13)
+23 silly fetchPackageMetaData     at Request.emit (events.js:191:7)
+23 silly fetchPackageMetaData     at Request.<anonymous> (C:\Users\UGEN174\AppData\Roaming\npm\node_modules\npm\node_modules\request\request.js:1044:10)
+23 silly fetchPackageMetaData     at emitOne (events.js:96:13)
+23 silly fetchPackageMetaData     at Request.emit (events.js:188:7)
+23 silly fetchPackageMetaData     at IncomingMessage.<anonymous> (C:\Users\UGEN174\AppData\Roaming\npm\node_modules\npm\node_modules\request\request.js:965:12)
+23 silly fetchPackageMetaData  error for vue-touch { Error: no such package available : vue-touch
+23 silly fetchPackageMetaData     at makeError (C:\Users\UGEN174\AppData\Roaming\npm\node_modules\npm\node_modules\npm-registry-client\lib\request.js:264:12)
+23 silly fetchPackageMetaData     at CachingRegistryClient.<anonymous> (C:\Users\UGEN174\AppData\Roaming\npm\node_modules\npm\node_modules\npm-registry-client\lib\request.js:252:14)
+23 silly fetchPackageMetaData     at Request._callback (C:\Users\UGEN174\AppData\Roaming\npm\node_modules\npm\node_modules\npm-registry-client\lib\request.js:172:14)
+23 silly fetchPackageMetaData     at Request.self.callback (C:\Users\UGEN174\AppData\Roaming\npm\node_modules\npm\node_modules\request\request.js:187:22)
+23 silly fetchPackageMetaData     at emitTwo (events.js:106:13)
+23 silly fetchPackageMetaData     at Request.emit (events.js:191:7)
+23 silly fetchPackageMetaData     at Request.<anonymous> (C:\Users\UGEN174\AppData\Roaming\npm\node_modules\npm\node_modules\request\request.js:1044:10)
+23 silly fetchPackageMetaData     at emitOne (events.js:96:13)
+23 silly fetchPackageMetaData     at Request.emit (events.js:188:7)
+23 silly fetchPackageMetaData     at IncomingMessage.<anonymous> (C:\Users\UGEN174\AppData\Roaming\npm\node_modules\npm\node_modules\request\request.js:965:12) pkgid: 'vue-touch', statusCode: 404, code: 'E404' }
+24 silly rollbackFailedOptional Starting
+25 silly rollbackFailedOptional Finishing
+26 silly runTopLevelLifecycles Finishing
+27 silly install printInstalled
+28 verbose stack Error: no such package available : vue-touch
+28 verbose stack     at makeError (C:\Users\UGEN174\AppData\Roaming\npm\node_modules\npm\node_modules\npm-registry-client\lib\request.js:264:12)
+28 verbose stack     at CachingRegistryClient.<anonymous> (C:\Users\UGEN174\AppData\Roaming\npm\node_modules\npm\node_modules\npm-registry-client\lib\request.js:252:14)
+28 verbose stack     at Request._callback (C:\Users\UGEN174\AppData\Roaming\npm\node_modules\npm\node_modules\npm-registry-client\lib\request.js:172:14)
+28 verbose stack     at Request.self.callback (C:\Users\UGEN174\AppData\Roaming\npm\node_modules\npm\node_modules\request\request.js:187:22)
+28 verbose stack     at emitTwo (events.js:106:13)
+28 verbose stack     at Request.emit (events.js:191:7)
+28 verbose stack     at Request.<anonymous> (C:\Users\UGEN174\AppData\Roaming\npm\node_modules\npm\node_modules\request\request.js:1044:10)
+28 verbose stack     at emitOne (events.js:96:13)
+28 verbose stack     at Request.emit (events.js:188:7)
+28 verbose stack     at IncomingMessage.<anonymous> (C:\Users\UGEN174\AppData\Roaming\npm\node_modules\npm\node_modules\request\request.js:965:12)
+29 verbose statusCode 404
+30 verbose pkgid vue-touch
+31 verbose cwd D:\work\os\html
+32 error Windows_NT 6.1.7600
+33 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\UGEN174\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "install" "vue-touch"
+34 error node v6.4.0
+35 error npm  v3.10.7
+36 error code E404
+37 error 404 no such package available : vue-touch
+38 error 404
+39 error 404 'vue-touch' is not in the npm registry.
+40 error 404 You should bug the author to publish it (or use the name yourself!)
+41 error 404 Note that you can also install from a
+42 error 404 tarball, folder, http url, or git url.
+43 verbose exit [ 1, true ]
