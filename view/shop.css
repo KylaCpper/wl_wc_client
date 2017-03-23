@@ -1,0 +1,253 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  user-select: none;
+  -webkit-user-select: none;
+  font-size: 0.373rem;
+  background-color: #665952;
+}
+[v-cloak] {
+  display: none;
+}
+p {
+  margin-bottom: 0;
+}
+em {
+  font-style: normal;
+}
+.btn:focus,
+.btn:active:focus {
+  outline: 0;
+}
+/* loading */
+.loading {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1050;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+.loading p {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0.907rem;
+  height: 0.907rem;
+  background: url("../resources/image/green_loading_icon@2x.png") no-repeat center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -webkit-animation: loading 3s infinite linear;
+  animation: loading 3s infinite linear;
+}
+@-webkit-keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/* /loading */
+.modalV_center > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.msgModal {
+  display: block;
+}
+.msgModal .modal-content {
+  width: 7.200rem;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 0;
+}
+.msgModal .modal-content div {
+  text-align: center;
+  padding: 1.067rem 0 1.200rem;
+  color: #665952;
+}
+.msgModal .modal-content div h4 {
+  font-size: 0.480rem;
+  font-weight: normal;
+  margin: 0;
+}
+.msgModal .modal-content ul {
+  display: table;
+  width: 100%;
+  margin-bottom: 0;
+  height: 1.333rem;
+}
+.msgModal .modal-content ul li {
+  display: table-cell;
+  text-align: center;
+  color: #665952;
+}
+.msgModal .modal-content ul li:nth-child(2) {
+  color: #D95C5C;
+}
+.fade-enter-active,
+.fade-leave-active {
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+/* 侧滑 */
+/* /侧滑 */
+body.grayBg {
+  background-color: #FBFBFB;
+}
+#wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#wrapper #scroller {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+}
+.iScrollVerticalScrollbar {
+  position: absolute;
+  top: 0;
+  bottom: 2px /*except*/;
+  right: 2px /*except*/;
+  width: 5px /*except*/;
+  z-index: 9999;
+  overflow: hidden;
+}
+.iScrollVerticalScrollbar .iScrollIndicator {
+  position: absolute;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.8) /*except*/;
+  border-radius: 0.053rem;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.greenBtn {
+  border-radius: 0.533rem;
+  padding: 0.267rem 1.067rem;
+  color: #fff;
+  font-size: 0.373rem;
+  background-color: #A3D5C0;
+}
+.greenBtn:hover,
+.greenBtn:focus {
+  color: #fff;
+}
+.greenBtn:active {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: #91cdb4;
+}
+.shopList {
+  margin-bottom: 0;
+}
+.shopList li {
+  width: 94%;
+  height: 4.267rem;
+  margin: 0.267rem auto;
+  padding: 0.267rem;
+  background-color: #fff;
+  border-radius: 0.160rem;
+  -webkit-box-shadow: 0 0 0.107rem 0.107rem #F5F2F1;
+  box-shadow: 0 0 0.107rem 0.107rem #F5F2F1;
+}
+.shopList li .shopImg {
+  width: 3.600rem;
+  height: 100%;
+  float: left;
+  margin-right: 0.267rem;
+  overflow: hidden;
+}
+.shopList li .shopImg img {
+  height: 100%;
+}
+.shopList li div {
+  overflow: hidden;
+  color: #665952;
+  height: 100%;
+  position: relative;
+}
+.shopList li div h5 {
+  font-size: 0.373rem;
+  line-height: 0.587rem;
+  min-height: 1.173rem;
+  margin: 0 0 0.160rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.shopList li div p {
+  font-size: 0.320rem;
+  line-height: 0.373rem;
+}
+.shopList li div p span {
+  width: 0.107rem;
+  height: 0.107rem;
+  background-color: #A3D5C0;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 0.133rem 0.053rem 0;
+  vertical-align: middle;
+}
+.shopList li div p em {
+  font-size: 0.480rem;
+  vertical-align: middle;
+  display: inline-block;
+  min-width: 1.067rem;
+}
+.shopList li div p del {
+  margin: 0.133rem 0.187rem 0;
+  color: #BDB8B5;
+  vertical-align: middle;
+  display: inline-block;
+  min-width: 0.720rem;
+}
+.shopList li div p .greenBtn {
+  padding: 0.133rem 0.453rem;
+}
+.shopList li div p:last-child {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.noCont {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: #665952;
+  font-size: 0.640rem;
+}

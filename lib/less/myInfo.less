@@ -1,0 +1,145 @@
+@import "public/public.less";
+
+body.grayBg{
+	background-color: @MYINFO-BODY-BG;
+}
+
+.myInfo{
+    width: 92%;
+    height: 84%;
+	margin: 0 auto;
+	border-radius: 6px;
+	background-color: @MYINFO-BG-COLOR;
+	.box-shadow(0 0 4px 4px @MYINFO-BOXSHADOW-COLOR);
+	padding: 90px 15px 0;
+	position: relative;
+    top: 60px;
+	ul{
+		li{
+			color: @MYINFO-TEXT-COLOR;
+		    height: 34px;
+			line-height: 34px;
+			overflow: hidden;
+			margin-bottom: 10px;
+			//head
+			&:nth-child(1){
+			    position: absolute;
+			    top: -47px;
+			    left: 0;
+			    right: 0;
+	    		width: 94px;
+	    		height: 94px;
+				border-radius: 50%;
+				border: 5px solid @MYINFO-HEAD-BORDER;
+			    margin: 0 auto;
+			}
+			img{
+				width: 100%;
+				height: 100%;
+			}
+			label{
+				font-weight: normal;
+				margin-bottom: 0;
+			}
+			p{
+				text-align: right;
+				position: relative;
+				.form-control{
+					display: inline-block;
+					text-align: right;
+					border: 0;
+					.box-shadow(none);
+					width: 55%;
+					-webkit-appearance: none;
+					color: inherit;
+					font-size: @MYINFO-INPUT-FONTSIZE;
+					height: 34px;
+				}
+				//年月日、cm、kg
+				span{
+					color: @MYINFO-UNIT-COLOR;
+					margin-right: 20px;
+					display: inline-block;
+				    min-width: 20px;
+				    &.dateColor{
+				    	color: inherit;
+				    }
+				}
+				//生日
+				input[type=date]{
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					opacity: 0;
+				}
+				//性别
+				.radio-inline:nth-child(2){
+					margin-left: 46px;
+				}
+				input[type=radio]{
+				    -webkit-appearance: none;
+				    outline: 0;
+				    width: 12px;
+				    height: 12px;
+				    border: 1px solid;
+				    border-radius: 50%;
+				    top: 20%;
+				    background-color: @MYINFO-INPUTRADIO-BG;
+				    //checked 样式
+				    &:before{
+				    	content: '';
+				    	position: absolute;
+				    	top: 50%;
+				    	left: 50%;
+				    	.transform(translate(-50%,-50%));
+				    	width: 6px;
+				    	height: 6px;
+				    	background-color: @MYINFO-INPUTRADIO-CHECKED-BG;
+				    	border-radius: 50%;
+				    	display: none;
+				    }
+				    &:checked:before{
+				    	display: block;
+				    }					
+				}
+			}
+			&:nth-last-child(2) p span{
+				margin-right: 55px;
+			}
+			&:last-child{
+				color: @MYINFO-TIP-COLOR;
+				font-size: @MYINFO-TIP-FONTSIZE;
+				padding: 0 15px 0 30px;
+				position: relative;
+			    height: auto;
+			    line-height: inherit;
+			    margin: 15px 0 20px;
+				&:before{
+					content: '';
+					position: absolute;
+					top: 5px;
+					left: 18px;					
+	                width: 4px;
+                	height: 4px;
+				    background-color: @MYINFO-TIP-CIRCLE-BG;
+				    border-radius: 50%;
+				}
+			}
+		}
+	}
+	//xx信息尚未填写
+	.notFilled_tip{
+		color: @MYINFO-NOTFILLEDTIP-COLOR;
+	}
+	.bottom{
+		position: absolute;
+		bottom: 40px;
+		left: 0;
+		right: 0;
+		.btn{
+			.btnStyle();
+		}
+	}
+}

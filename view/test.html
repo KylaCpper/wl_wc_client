@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <title>个人信息</title>
+    <link rel="stylesheet" type="text/css" href="../lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./myInfo.css">
+    <script type="text/javascript" src="./test.js"></script>
+
+</head>
+<body ontouchstart="" class="grayBg">
+
+	<div id="myInfo" class="myInfo">
+        <ul class="list-unstyled">
+            <li>
+                <img src="../resources/image/head.png">
+            </li>
+            <li>
+                <label class="col-xs-4 control-label">姓名</label>
+                <p class="col-xs-8">{{userInfo.nickname}}</p>
+            </li>
+            <li>
+                <label class="col-xs-4 control-label">性别</label>
+                <p class="col-xs-8">
+                    <label class="radio-inline">
+                        <input type="radio" name="sex" value="1" v-model="userInfo.sex">男
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="sex" value="2" v-model="userInfo.sex">女
+                    </label>        
+                </p>
+            </li>
+            <li>
+                <label for="birthday" class="col-xs-4 control-label">生日</label>
+                <p class="col-xs-8"> 
+                    <input type="date" id="birthday" v-model="userInfo.birthday">
+                    <span v-if="!userInfo.birthday">年月日</span>(必填)   
+                   <span v-else class="dateColor">{{userInfo.birthday}}</span> 
+                   
+                </p>
+            </li>
+            <li>
+                <label for="stature" class="col-xs-4 control-label">身高</label>
+                <p class="col-xs-8">
+                    <input type="number" class="form-control" id="stature" :value="userInfo.height" v-model="userInfo.height"><span>cm</span>(必填)
+                </p>
+            </li>
+            <li>
+                <label for="weight" class="col-xs-4 control-label">目标体重</label>  
+                <p class="col-xs-8">
+                    <input type="number" class="form-control" id="weight" :value="userInfo.toWeight" v-model="userInfo.toWeight"><span>kg</span>
+                </p>
+            </li>
+            <li>为了更准确的计算出您的身体数据，暂时仅支持身高为100-200cm的预设身高和10-80的预设年龄</li>
+        </ul>
+        <p class="text-center notFilled_tip">{{cue}}</p>
+        <p class="text-center bottom">
+            <button v-touch:tap="update" type="button" class="btn greenBtn">保存</button>
+        </p>
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+@import "public/public.less";
+
+.content{
+	width: 100%;
+	height: 100%;
+	padding-top: 18px;
+}
+
+.userInfo{
+	width: 340px;
+	height: 210px;
+	margin: 0 auto;
+	border-radius: 6px;
+	background-color: @USERINFO-BG-COLOR;
+	.box-shadow(4px 4px 4px 0 @USERINFO-BOXSHADOW-COLOR);
+	overflow: hidden;
+	li{
+		color: @USERINFO-TEXT-COLOR;
+		line-height: 1;
+		&:nth-child(1){
+			margin: 10px 0;
+		}
+		&:nth-child(3){
+			margin-top: 18px;
+			font-size: @USERINFO-TARGETWEIGHT-FONTSIZE;
+		}
+		img{
+    		width: 84px;
+    		height: 84px;
+			border-radius: 50%;
+		}
+		span{
+			font-size: @USERINFO-TARGETWEIGHTNUMBER-FONTSIZE;
+			font-weight: 300;
+			margin: 0 20px 0 5px;
+		}
+	}
+}
+
+#wrapper{
+	.iscroll_wrapper(260px,0);
+	#scroller{
+		position: absolute;
+		width: 100%;
+	}	
+}
+
+//侧滑
+.swipe();
+
+.deviceList{
+	li{
+		width: 325px;
+		margin: 0 auto;
+		//长按以解除绑定 tip
+		>p{
+		    margin-top: 5px;
+		    padding-left: 28px;
+		    color: @DEVICELIST-REMOVEBINDTIP-COLOR;
+		    font-size: @DEVICELIST-REMOVEBINDTIP-FONTSIZE;
+		    position: relative;
+		    line-height: 1;
+			&:before{
+			    content: '';
+			    position: absolute;
+			    top: 50%;
+			    left: 20px;
+			    .transform(translateY(-50%));
+			    width: 4px;
+			    height: 4px;
+			    background-color: @DEVICELIST-REMOVEBINDTIP-CIRCLE-BG;
+			    border-radius: 50%;
+			}
+		}
+	}
+	.swipeCont{
+		width: 100%;
+		border-radius: 6px;
+		.box-shadow(4px 4px 4px 0 @DEVICELIST-SWIPECONT-BOXSHADOW);
+		//文本模糊 用于解除绑定步骤二、激活
+		&.textBlur .swipeHandle .col-xs-6 {
+			p{
+			    text-shadow: 0 0 7px @DEVICELIST-SWIPEHANDLE-TEXTBLUR-SHADOW;
+			    color: @DEVICELIST-SWIPEHANDLE-TEXTBLUR-COLOR;			    
+		    }
+		    img{
+		    	-webkit-filter: blur(7px);
+		    }
+		}
+		.swipeHandle{
+			// 秤 icon
+			&:before{
+				content: '';
+				position: absolute;
+				top: -18px;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				.bgImgSize(36px,36px,"green_scale_icon@2x.png",-1px,cover);
+				z-index: 10;
+			    background-color: @DEVICELIST-DEVICECONT-SCALEICON-BG;
+			    border-radius: 50%;
+			}
+			.col-xs-6{
+				.display-box();
+				.box-arrangement();
+				.box-horizontal-alignment();
+				height: 100%;
+				padding: 0 0 0 20px;
+				color: #fff;
+				font-size: 12px;
+				&:nth-child(1) p{
+					opacity: 0.6;			
+					&:nth-child(2){
+						opacity: 1;
+						font-size: @DEVICELIST-SWIPEHANDLE-OSERIOCHINESE-FONTSIZE;
+					}		
+				}
+				span{
+					font-size: @DEVICELIST-SWIPEHANDLE-WEIGHTNUMBER-FONTSIZE;
+					font-weight: 300;
+				    margin-right: 5px;
+				}
+				img{
+					width: 12px;
+					height: 12px;
+					border-radius: 50%;
+				}
+			}
+			//新消息状态
+			.newMsg{
+				position: absolute;
+				top: -5px;
+				right: -5px;
+				.bgImgSize(15px,15px,"red_newMsg_icon@2x.png",center,cover);
+			}
+			//激活
+			.activatePanel{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 5;
+				.display-box();
+				.box-arrangement();
+				.box-horizontal-alignment();				
+				.btn{
+					.btnStyle();
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+}

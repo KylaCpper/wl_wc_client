@@ -1,0 +1,295 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  user-select: none;
+  -webkit-user-select: none;
+  font-size: 0.373rem;
+  background-color: #665952;
+}
+[v-cloak] {
+  display: none;
+}
+p {
+  margin-bottom: 0;
+}
+em {
+  font-style: normal;
+}
+.btn:focus,
+.btn:active:focus {
+  outline: 0;
+}
+/* loading */
+.loading {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1050;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+.loading p {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0.907rem;
+  height: 0.907rem;
+  background: url("../resources/image/green_loading_icon@2x.png") no-repeat center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -webkit-animation: loading 3s infinite linear;
+  animation: loading 3s infinite linear;
+}
+@-webkit-keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/* /loading */
+.modalV_center > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.msgModal {
+  display: block;
+}
+.msgModal .modal-content {
+  width: 7.200rem;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 0;
+}
+.msgModal .modal-content div {
+  text-align: center;
+  padding: 1.067rem 0 1.200rem;
+  color: #665952;
+}
+.msgModal .modal-content div h4 {
+  font-size: 0.480rem;
+  font-weight: normal;
+  margin: 0;
+}
+.msgModal .modal-content ul {
+  display: table;
+  width: 100%;
+  margin-bottom: 0;
+  height: 1.333rem;
+}
+.msgModal .modal-content ul li {
+  display: table-cell;
+  text-align: center;
+  color: #665952;
+}
+.msgModal .modal-content ul li:nth-child(2) {
+  color: #D95C5C;
+}
+.fade-enter-active,
+.fade-leave-active {
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+/* 侧滑 */
+/* /侧滑 */
+.detailTab {
+  width: 100%;
+  height: 1.467rem;
+  padding-top: 0.133rem;
+  background-color: #6e645d;
+}
+.detailTab ul {
+  height: 100%;
+  border-bottom: 0;
+  display: table;
+  width: 100%;
+}
+.detailTab ul li {
+  float: none;
+  height: 100%;
+}
+.detailTab ul li a {
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.480rem;
+  border-top-left-radius: 0.533rem;
+  border-top-right-radius: 0.533rem;
+  border: 0;
+  width: 1.280rem;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.detailTab ul li a:hover {
+  background-color: transparent;
+}
+.detailTab ul li.active a,
+.detailTab ul li.active a:hover {
+  color: #EAE766;
+  background-color: #665952;
+  border: 0;
+}
+.detailTab ul li.disabled a,
+.detailTab ul li.disabled a:hover {
+  color: #99928D;
+}
+.detailTab ul li {
+  display: table-cell;
+}
+.dateTabArea {
+  width: 100%;
+  height: 6.400rem;
+  margin-bottom: 0.533rem;
+  position: relative;
+}
+.dateTabArea .dateTab {
+  position: absolute;
+  top: 0.133rem;
+  right: 0.133rem;
+  z-index: 2;
+}
+.dateTabArea .dateTab li {
+  margin-left: 0;
+}
+.dateTabArea .dateTab li a {
+  color: #fff;
+  font-size: 0.320rem;
+  background-color: #6e645d;
+  border-radius: 0;
+  padding: 0.133rem 0.267rem;
+}
+.dateTabArea .dateTab li.active a {
+  color: #6e645d;
+  background-color: #A3D5C0;
+}
+.dateTabArea .dateTab_cont {
+  height: 100%;
+}
+.dateTabArea .dateTab_cont .tab-pane {
+  height: 100%;
+}
+.numValueGroup ul {
+  overflow: hidden;
+  padding-right: 0.533rem;
+}
+.numValueGroup ul li {
+  padding: 0 0 0 0.533rem;
+}
+.numValueGroup ul li div {
+  text-align: center;
+  padding: 0.160rem 0;
+  background-color: #6e645d;
+  border-left: 0.053rem solid #EFEC64;
+}
+.numValueGroup ul li div p {
+  color: #443A35;
+}
+.numValueGroup ul li div p:nth-child(2) {
+  color: #fff;
+  font-size: 0.640rem;
+}
+.numValueGroup > p {
+  padding: 0 0.533rem;
+  overflow: hidden;
+  color: #fff;
+}
+.stateGroup {
+  width: 90%;
+  margin: 0.667rem auto 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  position: relative;
+}
+.stateGroup li {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  text-align: center;
+  font-size: 0.320rem;
+}
+.stateGroup li p:nth-child(1) {
+  width: 100%;
+  border-bottom: 0.160rem solid;
+}
+.stateGroup li:nth-child(1) {
+  color: #5AA5B2;
+}
+.stateGroup li:nth-child(2) {
+  color: #57CA89;
+}
+.stateGroup li:nth-child(3) {
+  color: #CA8E57;
+}
+.stateGroup li:nth-child(4) {
+  color: #CA5757;
+}
+.stateGroup li.halo {
+  position: absolute;
+  top: -0.213rem;
+  left: 0;
+  width: 0.613rem;
+  height: 0.613rem;
+  background: url("../resources/image/yellow_halo_icon@2x.png") no-repeat center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -webkit-transition: left 1s ease;
+  transition: left 1s ease;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.explain {
+  width: 90%;
+  margin: 1.467rem auto 0;
+  padding-left: 0.400rem;
+  letter-spacing: -0.7px /*except*/;
+  color: #fff;
+  position: relative;
+}
+.explain:before {
+  content: '';
+  position: absolute;
+  top: 0.187rem;
+  left: 0.053rem;
+  width: 0.160rem;
+  height: 0.160rem;
+  border-radius: 50%;
+  background-color: #EFEC64;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <title>测量结果</title>
+    <link rel="stylesheet" type="text/css" href="../lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./result.css"> 
+    <script type="text/javascript" src="../lib/js/public.js"></script>
+</head>
+<body class="grayBg1">
+
+	<!-- 分享引导 -->
+	<ul class="list-unstyled shareGuide">
+		<li>点击此处</li>
+		<li>分享到朋友圈吧~~~</li>
+	</ul>
+	<!-- /分享引导 -->
+
+	<div class="resultContent" style="transform: translateY(100px)">
+		<div class="resultInfo">
+			<p>12月07日 星期三</p>
+			<p>20:45</p>
+			<!-- 圆形进度条小于50% removeclass moreThan50，大于50% addclass moreThan50，大于目标体重 addclass moreThan_target -->
+			<div class="circleProgress moreThan50">  
+			    <div class="slice">  
+			        <div class="bar" style="transform: rotate(290deg);"></div>
+			        <div class="fill"></div>  
+			    </div> 
+			    <div class="weightInfo">
+					<p>
+						<span>76.5</span>kg
+					</p>
+					<p>
+						距离目标还差<span>6.5</span>kg
+					</p>
+					<p class="myInfo_link hidden">
+						尚未设置目标体重<br>前去设置&nbsp;<span class="arrow_icon">＞</span>
+					</p>
+			    </div>
+				<div class="halo" style="transform: rotate(290deg);"></div>
+			</div> 	
+		</div>
+
+		<ul class="list-unstyled resultList">
+			<li class="col-xs-6">
+				<div>
+					<p class="highState">您的BMI偏高</p>
+					<p>BMI</p>
+					<p>26.5</p>
+				</div>
+			</li>
+			<li class="col-xs-6">
+				<div>
+					<p class="veryHighState">您的脂肪率偏高</p>
+					<p>体脂</p>
+					<p>25%</p>	
+				</div>		
+			</li>
+			<li class="col-xs-6">
+				<div>
+					<p class="standardState">您的基础代谢处于标准状态</p>
+					<p>基础代谢</p>
+					<p>1620</p>
+				</div>		
+			</li>
+			<li class="col-xs-6">
+				<div>
+					<p class="bodyAgeState">您的体年龄为23岁</p>
+					<p>体年龄</p>
+					<p>23岁</p>	
+				</div>		
+			</li>
+		</ul>
+	</div>
+
+	<!-- 分享弹窗 -->
+	<transition name="fade">
+		<div class="modal modalV_center shareModal" style="display:none;">
+			<div class="modal-content">
+				<ul class="list-unstyled successTip">
+					<li></li>
+					<li>还不错</li>
+					<li>
+						<p>您在一段时间减重</p>
+						<p>较少不明显</p>
+						<p>还需要继续努力</p>
+						<p>快去分享给好友让大家一起来玩吧</p>
+					</li>
+				</ul>
+				<ul class="list-unstyled failTip hidden">
+					<li></li>
+					<li>很可惜</li>
+					<li>
+						<p>很遗憾</p>
+						<p>您的体重增加了</p>
+						<p>还需要继续努力</p>
+						<p>快去分享给好友让大家一起来玩吧</p>
+					</li>
+				</ul>
+				<p>
+					<button type="button" class="btn greenBtn" @click="show = !show">分享</button>
+				</p>
+			</div>	
+		</div>
+	</transition>
+	<!-- /分享弹窗 -->
+
+</body>
+</html>

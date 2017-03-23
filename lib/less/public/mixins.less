@@ -1,0 +1,98 @@
+//mobile CSS Prefix
+@PREFIXES: -webkit-,~'';
+//all CSS Prefix
+// @PREFIXES: -webkit-,-moz-,-ms-,-o-,~'';
+
+@PREFVENDOR: ~'(transform|box-shadow)';
+
+.CSSPrefix(@property,@value){
+    .loop();
+    .loop(@I: length(@PREFIXES)) when (@I > 0){
+        .loop(@I - 1);
+        @PREFIX: extract(@PREFIXES,@I);
+        @{PREFIX}@{property}: replace(~'@{value}','@{PREFVENDOR}','@{PREFIX}$1','gi');
+    }
+}
+
+
+
+.background-size(@bgSize){
+    .CSSPrefix(background-size,@bgSize);
+}
+
+.box-shadow(@boxShadow1,@boxShadow2:X,...){
+    @ARGUMENTSVALUE: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g,'')`;
+    .CSSPrefix(box-shadow,@ARGUMENTSVALUE);
+}
+
+.linear-gradient(@point,@color1,@color2:X,...){
+    @ARGUMENTSVALUE: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g,'')`;
+    background-image: -webkit-linear-gradient(@ARGUMENTSVALUE);
+    // background-image: -moz-linear-gradient(@ARGUMENTSVALUE);
+    // background-image: -o-linear-gradient(@ARGUMENTSVALUE);
+    background-image: linear-gradient(@ARGUMENTSVALUE);
+}
+
+//变形
+.transform(@transform){
+    .CSSPrefix(transform,@transform);
+}
+
+.transform-origin(@origin){
+    .CSSPrefix(transform-origin,@origin);
+}
+
+//动画
+.animation(@animation){
+    .CSSPrefix(animation,@animation);
+}
+
+.keyframes(@name,@frames){
+    @-webkit-keyframes @name {@frames();}
+    // @-moz-keyframes @name {@frames();}
+    // @-o-keyframes @name {@frames();}
+    @keyframes @name {@frames();}
+}
+
+.animation-delay(@delayTime){
+    .CSSPrefix(animation-delay,@delayTime);
+}
+
+//过渡
+.transition(@transition1,@transition2:X,...){
+    @ARGUMENTSVALUE: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g,'')`;
+    .CSSPrefix(transition,@ARGUMENTSVALUE);
+}
+
+.transition-delay(@delayTime){
+    .CSSPrefix(transition-delay,@delayTime);
+}
+
+//弹性盒
+.old-display-box(){
+    display: -webkit-box;
+}
+
+.display-box(){
+    .old-display-box();
+    display: -webkit-flex;
+    display: flex;
+}
+
+//弹性盒的排列方式
+.box-arrangement(@box-orient:vertical,@flex-direction:column){
+    -webkit-box-orient: @box-orient;
+    .CSSPrefix(flex-direction,@flex-direction);
+}
+
+//弹性盒的水平对齐方式
+.box-horizontal-alignment(@box-pack:center,@justify-content:center){
+    -webkit-box-pack: @box-pack;
+    .CSSPrefix(justify-content,@justify-content);
+}
+
+//弹性盒的垂直对齐方式
+.box-vertical-alignment(@box-align:center,@align-items:center){
+    -webkit-box-align: @box-align;
+    .CSSPrefix(align-items,@align-items);
+}

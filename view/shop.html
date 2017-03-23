@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <title>商城</title>
+    <link rel="stylesheet" type="text/css" href="../lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./shop.css">
+    <script type="text/javascript" src="../lib/js/iscroll.js"></script>  
+    <script type="text/javascript" src="../lib/js/public.js"></script>
+    <script type="text/javascript">
+        var myScroll;       
+        window.addEventListener("load",function(){
+            myScroll = new IScroll('#wrapper',{
+                //list 滚动条样式 DIY
+                scrollbars: 'custom',
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,
+                click: true
+            });
+        },false);
+        document.addEventListener('touchmove',function(e){e.preventDefault();}); 
+    </script>  
+</head>
+<body class="grayBg">
+
+	<div id="wrapper">
+		<div id="scroller">
+			<p class="noCont hidden">当前商城无商品</p>
+			<ul class="list-unstyled shopList">
+				<li>
+					<p class="shopImg">
+						<img src="../resources/image/flowGuide_img1.jpg">
+					</p>
+					<div>
+						<h5>欧瑟若 Oserio家用成人健康减肥体重</h5>
+						<p><span></span>Type something</p>
+						<p><span></span>Type something</p>
+						<p><span></span>Type something</p>
+						<p>
+							<em>¥129</em>
+							<del>¥299</del>
+							<button type="button" class="btn greenBtn">立即购买</button>
+						</p>
+					</div>
+				</li>
+				<li>
+					<p class="shopImg">
+						<img src="../resources/image/flowGuide_img1.jpg">
+					</p>
+					<div>
+						<h5>欧瑟若 Oserio家用成人健康减肥体重</h5>
+						<p><span></span>Type something</p>
+						<p><span></span>Type something</p>
+						<p><span></span>Type something</p>
+						<p>
+							<em>¥129</em>
+							<del>¥299</del>
+							<button type="button" class="btn greenBtn">立即购买</button>
+						</p>
+					</div>
+				</li>
+				<li>
+					<p class="shopImg">
+						<img src="../resources/image/flowGuide_img1.jpg">
+					</p>
+					<div>
+						<h5>欧瑟若 Oserio家用成人健康减肥体重</h5>
+						<p><span></span>Type something</p>
+						<p><span></span>Type something</p>
+						<p><span></span>Type something</p>
+						<p>
+							<em>¥129</em>
+							<del>¥299</del>
+							<button type="button" class="btn greenBtn">立即购买</button>
+						</p>
+					</div>
+				</li>
+				<li>
+					<p class="shopImg">
+						<img src="../resources/image/flowGuide_img1.jpg">
+					</p>
+					<div>
+						<h5>欧瑟若 Oserio家用成人健康减肥体重</h5>
+						<p><span></span>Type something</p>
+						<p><span></span>Type something</p>
+						<p><span></span>Type something</p>
+						<p>
+							<em>¥129</em>
+							<del>¥299</del>
+							<button type="button" class="btn greenBtn">立即购买</button>
+						</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+</body>
+</html>

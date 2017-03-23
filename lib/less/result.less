@@ -1,0 +1,182 @@
+@import "public/public.less";
+
+
+.resultInfo{
+	padding-top: 13px;
+	>p{
+		color: @RESULTINFO-TEXT-COLOR;
+		font-size: @RESULTINFO-TEXT-FONTSIZE;
+		text-align: center;		
+		&:nth-child(2){
+			font-size: @RESULTINFO-TIME-FONTSIZE;
+		}
+	}
+}
+
+//圆形进度条
+.circleProgress{   
+	position: relative;
+    width: 1em;
+    height: 1em;
+    margin: 5px auto 0;
+    font-size: @CIRCLEPROGRESS-TEXT-FONTSIZE;
+    overflow: hidden;
+    //置于底部的圆
+    &:before{
+	    content: '';
+	    position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    left: 0;
+	    right: 0;
+	    margin: auto;	
+	    width: 0.9em;
+	    height: 0.9em;
+	    border: 2px solid @CIRCLEPROGRESS-ATBOTTOMCIRCLE-BORDER;
+	    border-radius: 50%;
+    }
+    //置于顶部的圆
+    .slice{  
+	    position: absolute;
+	    width: 1em;
+	    height: 1em;
+	    clip: rect(0,1em,1em,0.5em); 
+	    .bar{  
+		    position: absolute;
+		    top: 0;
+		    bottom: 0;
+		    left: 0;
+		    right: 0;
+		    margin: auto;
+		    width: 0.92em;
+		    height: 0.92em;
+		    clip: rect(0,0.46em,0.92em,0);
+		    background-color: @CIRCLEPROGRESS-ATTOPCIRCLE-BG;
+		    border-radius: 50%;
+		    .transform(rotate(0deg));
+		    .transition(transform 1s ease);
+	    }  
+	    .fill{  
+		    position: absolute;
+		    top: 0;
+		    bottom: 0;
+		    left: 0;
+		    right: 0;
+		    margin: auto;
+		    width: 0.92em;
+		    height: 0.92em;
+		    clip: rect(0,0.92em,0.92em,0.46em);
+		    background-color: @CIRCLEPROGRESS-ATTOPCIRCLE-BG;
+		    border-radius: 50%;
+		    display: none;
+	    }
+    }
+    //进度条大于50%
+    &.moreThan50 .slice{  
+    	clip: rect(auto,auto,auto,auto);
+    	.fill{ 
+    		display: block;
+    	}
+	}      
+    .weightInfo{  
+	    position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    left: 0;
+	    right: 0;
+	    margin: auto;
+	    width: 0.85em;
+	    height: 0.85em;
+	    text-align: center;
+	    border-radius: 50%;
+	    background-color: @CIRCLEPROGRESS-WEIGHTINFO-BG;
+	    z-index: 1; 
+	    padding-top: 45px;
+        p{
+        	color: @CIRCLEPROGRESS-WEIGHTINFO-COLOR;
+        	font-size: @CIRCLEPROGRESS-WEIGHTINFO-FONTSIZE;
+        	span{
+        		margin: 0 4px;
+        	}
+        	&:nth-child(1){
+        		font-size: @CIRCLEPROGRESS-WEIGHTINFO-UNIT-FONTSIZE;
+				span{	
+					color: @CIRCLEPROGRESS-WEIGHTINFO-NUMBER-COLOR;
+					font-size: @CIRCLEPROGRESS-WEIGHTINFO-NUMBER-FONTSIZE;
+					font-weight: 300;
+					line-height: 1;	
+				}
+        	}
+        	&.myInfo_link{
+        		color: @CIRCLEPROGRESS-WEIGHTINFO-MYINFOLINK-COLOR;
+        		line-height: 20px;
+        	}
+        }  
+    }  
+    .halo{
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+    	.bgImgSize(1em,1em,"yellow_halo_icon@2x.png",center top,23px 23px);
+    	.transform(rotate(0deg));
+    	.transition(transform 1s ease);   	
+	    z-index: 2;   	
+    }
+}   
+
+.resultList{
+	overflow: hidden;
+    padding: 0 20px;
+    margin: 13px 0 0 -10px;
+	li{
+		height: 135px;
+		padding: 0 0 0 10px;
+		margin-bottom: 10px;
+		div{
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			background-color: @RESULTLIST-RESULTCONT-BG;
+			.box-shadow(4px 4px 4px 0 @RESULTLIST-RESULTCONT-BOXSHADOW);
+			border-radius: 2px;
+			overflow: hidden;			
+			p{
+				color: @RESULTLIST-RESULTCONT-COLOR;
+			    font-size: @RESULTLIST-RESULTCONT-FONTSIZE;
+			    &:nth-child(1){
+			    	height: 30px;
+				    line-height: 30px;
+			    }
+			    &:nth-child(2){
+					color: @RESULTLIST-RESULTCONT-TITLE-COLOR;
+    				margin-top: 20px;
+			    }
+			    &:nth-child(3){
+				    font-size: @RESULTLIST-RESULTCONT-NUMBER-FONTSIZE;
+					font-weight: 300;
+					line-height: 1;	
+			    }
+			    //偏高
+			    &.highState{
+			    	background-color: @RESULTLIST-RESULTCONT-HIGHSTATE-BG;
+			    }
+			    //很高
+			    &.veryHighState{
+			    	background-color: @RESULTLIST-RESULTCONT-VERYHIGHSTATE-BG;
+			    }
+			    //标准
+			    &.standardState{
+			    	background-color: @RESULTLIST-RESULTCONT-STANDARDSTATE-BG;
+			    }
+			    //体年龄
+			    &.bodyAgeState{
+			    	background-color: @RESULTLIST-RESULTCONT-BODYAGESTATE-BG;
+			    }
+			    //偏低
+			    &.lowState{
+			    	background-color: @RESULTLIST-RESULTCONT-LOWSTATE-BG;
+			    }
+			}
+		}
+	}
+}
